@@ -1,3 +1,3 @@
 # system_server_scanner
 Projekt zaliczeniowy
-tu bedzie opis 
+tu bedzie instrukcja 
