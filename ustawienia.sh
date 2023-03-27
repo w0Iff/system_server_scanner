@@ -9,4 +9,4 @@ passwd -w 31 administrator     #Ustawiamy przypomnienie o końcu ważności has�
 #passwd -w 61 gosc
 passwd -d gosc                 #Usówamy hasło z gościa - może się logować bez.
 chown gosc:public /home/gosc   #Przypisujemy użytkownika do katalogu domowego.
-chown administrator:admin /home/administrator #analogicznie j/w
+chown administrator:admin /home/administrator #analogicznie j/w.

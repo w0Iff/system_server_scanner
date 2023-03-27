@@ -1,7 +1,8 @@
+#!/bin/bash
 ip a #Tworzymy i konfigurujemy skaner. Rozpoczynamy od pobrania danych - pobieramy IP.
 echo "###################################" #Dla czytelności 
 echo "Prosze podaj IP swojej sieci i naciśnij ENTER: " #Komenda "menu".
-read ip                                                #Czytamy wprowadzone dane.
+read ip                                                #Zbieramy wprowadzone dane.
 crontab -l | { echo "*/5 * * * * nmap $ip -oN /usr/share/nginx/html/scan.txt"; } | crontab - #Pobrane IP, wpisujemy do komendy crontab'a, i tworzymy plik z wynikami.
 echo "Jezeli pojawil sie blad o braku crontabow, prosze zignorowac" #Jeżeli użytkownik nie ma żadnych stworzonych crontab'ow, wyskoczy błąd - ale skryp dalej będzie działał.
 firewall-cmd --permanent --add-port={80/tcp,443/tcp} #Otwieramy porty w Firewall'u.
@@ -15,9 +16,11 @@ cat >> index.html <<EOF  #Nadpisujemy domyślny INDEX, i wprowadzamy HTML potrze
 > <!DOCTYPE html> 
 > <html>
 > <body>
-> <p> Twoje aktywne i podłączone urządzenia w sieci to: </p>
+> <p> Twoje aktywne urzadzenia w sieci to: </p>
 > <iframe src="scan.txt" width="100%" height="450" style="border:1px solid black;"> </iframe>
 > </body>
 > </html>
 EOF
 #Kod HTML. Tutaj już można robić wiele innych rzeczy, np. zabezpieczyć stronę hasłem.
+echo Proszę przejść do przeglądarki i wpisać http://$ip/index.html
+#Wypisujemy adres dla testu skanera. 
