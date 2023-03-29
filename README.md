@@ -12,5 +12,8 @@ Projekt w założeniu ma tworzyć automatyzacje która konfiguruje system wedle 
 #####################
 
 Wszystkie czynności w skryptach zostały opisane, tak aby było jasne co "autor" miał na myśli.
+#####################
+
+29.03.2023 - dodane opcje skanowania.
 
 #####################
